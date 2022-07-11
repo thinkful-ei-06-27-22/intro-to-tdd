@@ -1,30 +1,29 @@
 const addNums = require('../src/main');
-const expect = require('chai').expect;
 
 
 describe('addNums()',()=>{
-    it('should produce the sum of two numbers',()=>{
+    test('should produce the sum of two numbers',()=>{
         const actual = addNums(6,6);
-        expect(actual).to.equal(12);
+        expect(actual).toBe(12);
     })
-    it('should output 0 if no numbers are passed in',()=>{
+    test('should output 0 if no numbers are passed in',()=>{
         const actual = addNums();
-        expect(actual).to.equal(0)
+        expect(actual).toBe(0)
     })
-    it('should produce the sum of two stringified numbers',()=>{
+    test('should produce the sum of two stringified numbers',()=>{
         const actual = addNums('5','100');
-        expect(actual).to.equal(105)
+        expect(actual).toBe(105)
     })
-    it('should return error if inputs are not a number',()=>{
+    test('should return error if inputs are not a number',()=>{
         const actual = addNums('dog', {});
-        expect(actual).to.equal('User entered non-numeric values')
+        expect(actual).toBe('User entered non-numeric values')
     })
-    it('returned val should be a number',()=>{
+    test('returned val should be a number',()=>{
         const actual = addNums('5','100');
-        expect(actual).to.be.a('number')
+        expect(typeof actual).toBe('number')
     })
-    it('should check if add nums is a function',()=>{
-        expect(addNums).to.be.a('function')
+    test('should check if add nums is a function',()=>{
+        expect(typeof addNums).toBe('function')
     })
 });
 
